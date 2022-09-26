@@ -1,4 +1,5 @@
 import logoMenu from '../img/logoMenu.svg'
+import carrito from '../img/iconoCarrito.svg'
 
 export const NavBar = () =>{
     return <>
@@ -37,7 +38,7 @@ export const NavBar = () =>{
                     </li>
                     <li className="nav-item">
                         <a className="nav-link text-light fs-6" href="#">
-                                carrito
+                            <img className='header-carrito' src={carrito}/>
                         </a>
                     </li>
                 </ul>

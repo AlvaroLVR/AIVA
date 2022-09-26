@@ -37,7 +37,7 @@
           align-items: baseline;
 }
 
-#root .header .header-lista #header-list-right #header-carrito {
-  height: 30px;
+#root .header .header-lista #header-list-right .header-carrito {
+  height: 28px;
 }
 /*# sourceMappingURL=style.css.map */
