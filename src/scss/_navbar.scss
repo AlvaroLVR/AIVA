@@ -1,0 +1,25 @@
+#root{
+    .header{
+        padding: 0 2rem;
+        align-items: center;
+        .header-logo{
+            svg{
+                border-right: 1px solid white;
+            }
+        }
+        .header-lista{
+            display: flex;
+            justify-content: space-between;
+            #header-list-left{
+                
+            }
+            #header-list-right{
+                display: flex;
+                align-items: baseline;
+                #header-carrito{
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
