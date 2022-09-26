@@ -1,0 +1,195 @@
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  
+  #main-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 2rem 0;
+  }
+  
+  #main-card .main-tarjetas {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  
+  .tarjeta img {
+    height: 20rem;
+  }
+  
+  #carrousel {
+    height: 80vh;
+    background-image: url("../img/carrousel2.jpg");
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
+  }
+  
+  #carrousel #btn-carrousel {
+    position: relative;
+    left: 47vw;
+    top: 70vh;
+  }
+  
+  #banner-promociones {
+    height: 55vh;
+    background-image: url("../img/carrousel1.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  
+  #banner-promociones #texto-promociones {
+    padding: 2rem;
+    width: 60vw;
+  }
+  
+  #banner-promociones #btn-promociones {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  
+  #main-categoria {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 2rem 0;
+  }
+  
+  #main-categoria .main-tarjetas {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  
+  #main-categoria .main-tarjetas .tarjeta {
+    opacity: 0.60;
+    text-align: center;
+  }
+  
+  #main-categoria .main-tarjetas .tarjeta a {
+    text-decoration: none;
+  }
+  
+  #main-categoria .main-tarjetas .tarjeta:hover {
+    opacity: 1;
+  }
+  
+  #banner-productos {
+    height: 55vh;
+    background-image: url("../img/Playa con atardecer.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  
+  #banner-productos #texto-productos {
+    padding: 2rem;
+    width: 60vw;
+  }
+  
+  #banner-productos #btn-productos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  
+  #img-sobre-nosotros img {
+    width: 44vw;
+    height: 50vh;
+  }
+  
+  .header {
+    padding: 0 2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .header .header-logo svg {
+    border-right: 1px solid white;
+  }
+  
+  .header .header-lista {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .header .header-lista #header-list-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  
+  .header .header-lista #header-list-right #header-carrito {
+    height: 30px;
+  }
+  
+  .footer .footer-contacto {
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  
+  .footer .footer-contacto .direccion iframe {
+    width: 38vw;
+    height: 30vh;
+    margin: 0 auto;
+  }
+  /*# sourceMappingURL=style.css.map */
