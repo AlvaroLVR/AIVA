@@ -13,8 +13,10 @@
           align-items: center;
 }
 
-#root .header .header-logo svg {
+#root .header .header-logo .svg {
   border-right: 1px solid white;
+  fill: white;
+  height: 30px;
 }
 
 #root .header .header-lista {

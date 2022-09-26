@@ -3,8 +3,10 @@
         padding: 0 2rem;
         align-items: center;
         .header-logo{
-            svg{
+            .svg{
                 border-right: 1px solid white;
+                fill: white;
+                height: 30px;
             }
         }
         .header-lista{

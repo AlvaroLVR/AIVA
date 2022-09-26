@@ -1,3 +1,5 @@
+import logoMenu from '../img/logoMenu.svg'
+
 export const NavBar = () =>{
     return <>
         <div className="header container-fluid navbar sticky-top bg-dark navbar-expand-lg ">
@@ -6,7 +8,7 @@ export const NavBar = () =>{
             </button>
         
             <a className="navbar-brand header-logo" href="#">
-                MARCA
+                <img className='svg' src={logoMenu} />
             </a>
         
             <div  className="collapse navbar-collapse header-lista" id="navbarTogglerDemo03">
