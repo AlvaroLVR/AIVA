@@ -1,7 +1,12 @@
 import logoMenu from '../img/logoMenu.svg'
-import carrito from '../img/iconoCarrito.svg'
+import CartWidget from './CartWidget';
+import ItemListContainer from './ItemListContainer';
+import  {useState}  from 'react';
+import  {useEffect}  from 'react';
 
 export const NavBar = () =>{
+
+
     return <>
         <div className="header container-fluid navbar sticky-top bg-dark navbar-expand-lg ">
             <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +43,7 @@ export const NavBar = () =>{
                     </li>
                     <li className="nav-item">
                         <a className="nav-link text-light fs-6" href="#">
-                            <img className='header-carrito' src={carrito}/>
+                            <CartWidget/>
                         </a>
                     </li>
                 </ul>
