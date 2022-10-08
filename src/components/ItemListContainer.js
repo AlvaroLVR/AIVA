@@ -1,8 +1,35 @@
 import React from 'react'
+import { json } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
-export default function ItemListContainer(props) {
+export default function ItemListContainer() {
+  /* setar el estado del objeto que se envia a ItemList */
+  const [data, setData] = useState([])
 
-    return (
-        <div className='d-flex justify-content-center mt-4 fs-1 ' >{props.greeting}</div>
-    )
+  /* llamar a la API y a la function que setea el estado de data */
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then((res) =>{
+      res.json();
+    })
+    .then((datos)=>{
+      setData(datos);
+    })
+    
+  },[])
+
+  return (
+    <div className='d-flex flex-column align-items-center mt-4' >
+      <h2>Productos</h2>
+      {/* aca va el MAP */} 
+      {/* <ul>
+        {
+          data.map(users =>( <li key={users.id}> {users.name} - {users.email}</li>))
+        } 
+      </ul>
+      */}
+
+    </div>
+  )
 }

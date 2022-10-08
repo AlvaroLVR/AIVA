@@ -1,11 +1,8 @@
+import React from 'react'
 import logoMenu from '../img/logoMenu.svg'
 import CartWidget from './CartWidget';
-import ItemListContainer from './ItemListContainer';
-import  {useState}  from 'react';
-import  {useEffect}  from 'react';
 
 export const NavBar = () =>{
-
 
     return <>
         <div className="header container-fluid navbar sticky-top bg-dark navbar-expand-lg ">
@@ -17,9 +14,9 @@ export const NavBar = () =>{
                 <img className='svg' src={logoMenu} />
             </a>
         
-            <div  className="collapse navbar-collapse header-lista" id="navbarTogglerDemo03">
+            <div  className="collapse navbar-collapse header-lista " id="navbarTogglerDemo03">
                 
-                <ul id="header-list-left" className="navbar-nav  mb-lg-0">
+                <ul id="header-list-left" className="navbar-nav mb-lg-0">
                     <li className="nav-item">
                         <a className="nav-link text-light fs-6" href="#">Hombres</a>
                     </li>
@@ -34,7 +31,7 @@ export const NavBar = () =>{
                     </li>
                 </ul>
                 
-                <ul id="header-list-right" className="navbar-nav  mb-lg-0">
+                <ul id="header-list-right" className="navbar-nav mb-lg-0">
                     <li className="nav-item">
                         <a className="nav-link text-light fs-6" href="#">Sobre nosotros</a>
                     </li>
