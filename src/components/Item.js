@@ -9,12 +9,16 @@ export default function Item(props) {
       <div className='container bg-light border-2  p-3 mt-4'>
         <div className='row'>
           <div className='col-6  border-start border-primary'>
-             SOY LA IMAGEN DEL PRODUCTO. ID={props}
             {/* <img className='' src={props.imagen}/> */}
+            <img src={props.image} />
           </div>
           <div className='col-6 border-start border-primary'>
-             SOY LOS DETALLES DEL PRODUCTO
-            {/* descripcion del producto: id - titulo - detalles - stock */}
+            <h2>Title</h2>
+            <span className='fs-5'>Categoria</span>
+            <ul className=''>
+              <li className='list-group-item'>Descripcion: </li>
+              <li className='list-group-item fs-3'><b>Precio </b></li>
+            </ul>
           </div>
         </div>
       </div>
