@@ -10,17 +10,17 @@ export default function ItemListContainer() {
 
   /* llamar a la API y a la function que setea el estado de data */
   useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/users')
+    /* fetch('https://jsonplaceholder.typicode.com/users') */
+    fetch('https://fakestoreapi.com/products')
     .then((res) => res.json() )
     .then((datos)=> setData(datos) )
-
   },[])
 
   return (
-    <div className='d-flex flex-column align-items-center mt-4' >
+    <div className='container d-flex flex-column align-items-center mt-4' >
       <h2>Productos</h2>
       {/* aca va el MAP */} 
-      <ul className='d-flex flex-row flex-wrap'>
+      <ul className='d-flex flex-wrap justify-content-between'>
         {
           data.map(item => <ItemList key={item.id} datos={item}/> ) 
         }
