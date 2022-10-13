@@ -14,10 +14,7 @@ function App() {
           <Route path='/'  element={<ItemListContainer />} />
           <Route path='/detalles' element={<Item/>}/>
           <Route path='/detalles/:id' element={<Item />} /> 
-          {/* <Route path='/categoria/gorras' element={<ItemListContainer greeting={'Hello World'} titulo='ItemListContainer de app' />} />    
-          <Route path='/categoria/pantalones' element={<ItemListContainer greeting={'Hello World'} titulo='ItemListContainer de app' />} />     */}
           <Route path='*' element={<NotFound404/>}/>
-
 
           <Route path='*' element={ <Navigate to='/NotFound404' />} /> 
         </Routes>

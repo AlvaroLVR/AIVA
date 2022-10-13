@@ -1,12 +1,12 @@
 import React from 'react';
-import Item from './Item';
 import { Link } from 'react-router-dom';
+import Item from './Item'
 
 export default function ItemList(props) {
 
   /* aca va la lista de productos. utilizando MAP */
-  /* const users = props */
-  console.log(props);
+ 
+  /* console.log(props); */
 
   return (
     <>
@@ -15,11 +15,9 @@ export default function ItemList(props) {
         <div className="card-body d-flex flex-column justify-content-end text-center">
           <h5 className="card-title"><b>{`${props.datos.title}`} </b></h5>
           <p className="card-text">{`${props.datos.category}`}</p>
-          <Link to={`/detalles`} >
-            <a className="btn btn-dark">Detalles</a>
-          </Link>  
+          <Link to={`/detalles/${props.datos.id}`} className="btn btn-dark" > Detalles </Link>
         </div>
       </div>
     </>
   )
-}
+} 

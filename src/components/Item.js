@@ -1,7 +1,10 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 export default function Item(props) {
-  
+  const {id} = useParams()
+
+  console.log(props);
   return (
     <>
       {/* aca van los detalles de los productos */}
@@ -13,11 +16,11 @@ export default function Item(props) {
             <img src={props.image} />
           </div>
           <div className='col-6 border-start border-primary'>
-            <h2>Title</h2>
-            <span className='fs-5'>Categoria</span>
+            <h2>{props.title}</h2>
+            <span className='fs-5'>Categoria {props.category}</span>
             <ul className=''>
-              <li className='list-group-item'>Descripcion: </li>
-              <li className='list-group-item fs-3'><b>Precio </b></li>
+              <li className='list-group-item'>Descripcion: {props.description} </li>
+              <li className='list-group-item fs-3'><b>Precio {props.price} </b></li>
             </ul>
           </div>
         </div>
