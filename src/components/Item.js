@@ -1,30 +1,20 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Item(props) {
-  const {id} = useParams()
+export default function ItemList(props) {
 
-  console.log(props);
+  /* CARD */
+  
   return (
     <>
-      {/* aca van los detalles de los productos */}
-
-      <div className='container bg-light border-2  p-3 mt-4'>
-        <div className='row'>
-          <div className='col-6  border-start border-primary'>
-            {/* <img className='' src={props.imagen}/> */}
-            <img src={props.image} />
-          </div>
-          <div className='col-6 border-start border-primary'>
-            <h2>{props.title}</h2>
-            <span className='fs-5'>Categoria {props.category}</span>
-            <ul className=''>
-              <li className='list-group-item'>Descripcion: {props.description} </li>
-              <li className='list-group-item fs-3'><b>Precio {props.price} </b></li>
-            </ul>
-          </div>
+      <div className="card m-2 p-2 align-items-center "  style={{width: '15rem'}}>
+        <img className=" card-img-top" src={props.datos.image} style={{width: '11rem'}} />
+        <div className="card-body d-flex flex-column justify-content-end text-center">
+          <h5 className="card-title"><b>{`${props.datos.title}`} </b></h5>
+          <p className="card-text">{`${props.datos.category}`}</p>
+          <Link to={`/detalles/${props.datos.id}`} className="btn btn-dark" > Detalles </Link>
         </div>
       </div>
     </>
   )
-}
+} 

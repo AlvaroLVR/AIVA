@@ -2,8 +2,9 @@ import React from 'react'
 import {NavBar} from './components/NavBar'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer';
-import Item from './components/Item';
+import ItemDetail from './components/ItemDetail';
 import NotFound404 from './components/helpers/NotFound404';
+import ItemDetailContainer from './components/ItemDetailContainer'
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
         <NavBar/>   
         <Routes>
           <Route path='/'  element={<ItemListContainer />} />
-          <Route path='/detalles' element={<Item/>}/>
-          <Route path='/detalles/:id' element={<Item />} /> 
+          <Route path='/detalles' element={<ItemDetail/>}/>
+          <Route path='/detalles/:id' element={<ItemDetailContainer />} /> 
           <Route path='*' element={<NotFound404/>}/>
 
           <Route path='*' element={ <Navigate to='/NotFound404' />} /> 

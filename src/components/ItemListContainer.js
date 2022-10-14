@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import ItemList from './ItemList'
+import Item from './Item'
 
 export default function ItemListContainer() {
 
@@ -22,7 +22,7 @@ export default function ItemListContainer() {
       {/* aca va el MAP */} 
       <ul className='d-flex flex-wrap justify-content-between'>
         {
-          data.map(item => <ItemList key={item.id} datos={item}/> ) 
+          data.map(item => <Item key={item.id} datos={item}/> ) 
         }
       </ul>
     </div>
