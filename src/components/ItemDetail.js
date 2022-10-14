@@ -18,7 +18,7 @@ export default function ItemDetail(props) {
               <li className='list-group-item'>  Categoria <i> {props.prod.category}  </i> </li>
               <li className='list-group-item fs-4 '>Descripcion: {props.prod.description}</li>
             </ul>
-            <div className='text-end fs-2 rounded-1 '><b className='bg-dark text-white p-2 rounded-1'>Precio $ {props.prod.price}  </b></div>
+            <div className='text-end fs-2 rounded-1 '><b className='bg-success text-white p-2 rounded-1'>Precio $ {props.prod.price}  </b></div>
           </div>
         </div>
       </div>
