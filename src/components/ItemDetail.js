@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ItemDetail(props) {
 
@@ -11,13 +12,14 @@ export default function ItemDetail(props) {
           <div className='col-md-8  flex-wrap d-flex justify-content-around bg-white'>
             <img className='d-flex align-center' style={{width: '30vw'}} src={props.prod.image} />
           </div>
-          <div className='col-md-4  flex-wrap d-flex flex-column justify-content-between '>
+          <div className='col-md-4  flex-wrap d-flex flex-column justify-content-between mt-2'>
             <h2 className='text-center'> <b>{props.prod.title}</b> </h2>
+            <div className='text-center fs-3 rounded-1 '><b className='bg-success text-white p-2 rounded-1'>Precio $ {props.prod.price}  </b></div>
             <ul className=''>
               <li className='list-group-item text-primary'>  Categoria: <i> {props.prod.category}  </i> </li>
-              <li className='list-group-item fs-5 '>Descripcion <br/> {props.prod.description}</li>
+              <li className='list-group-item fs-6 '>Descripcion <br/> {props.prod.description}</li>
             </ul>
-            <div className='text-end fs-2 rounded-1 '><b className='bg-success text-white p-2 rounded-1'>Precio $ {props.prod.price}  </b></div>
+            <Link to={'/carrito'} className='btn bg-black text-white'>agregar al carrito</Link>
           </div>
         </div>
       </div>
