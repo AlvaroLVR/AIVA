@@ -17,10 +17,10 @@ export default function ItemListContainer() {
   },[])
 
   return (
-    <div className='container-fluid d-flex flex-column align-items-center mt-4' >
-      <h2>Productos</h2>
+    <div className='container-fluid d-flex flex-column ' >
+      <h2 className='text-center mt-4'>Productos</h2>
       {/* aca va el MAP */} 
-      <ul className='d-flex flex-wrap justify-content-between'>
+      <ul className='d-flex flex-wrap justify-content-center m-3' style={{padding: '0'}}>
         {
           data.map(item => <Item key={item.id} datos={item}/> ) 
         }
