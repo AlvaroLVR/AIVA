@@ -3,6 +3,6 @@ import carrito from '../img/iconoCarrito.svg'
 
 export default function CartWidget() {
   return (
-    <img className='header-carrito' src={carrito} />
+    <img style={{height: '25px'}} className='header-carrito' src={carrito} />
   )
 }
