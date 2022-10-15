@@ -44,7 +44,7 @@ export const NavBar = () =>{
                                     <Link to={'/categoria/accesorios'} className="nav-link text-light fs-6" >Accesorios</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/categoria/hombres'} className="nav-link text-light fs-6" >Importados</Link> 
+                                    <Link to={'/categoria/importados'} className="nav-link text-light fs-6" >Importados</Link> 
                                 </li>
                             </ul>
                             <ul id="header-list-right" className="navbar-nav mb-lg-0">

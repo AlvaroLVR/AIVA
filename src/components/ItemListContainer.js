@@ -17,7 +17,7 @@ export default function ItemListContainer() {
   },[])
 
   return (
-    <div className='container d-flex flex-column align-items-center mt-4' >
+    <div className='container-fluid d-flex flex-column align-items-center mt-4' >
       <h2>Productos</h2>
       {/* aca va el MAP */} 
       <ul className='d-flex flex-wrap justify-content-between'>

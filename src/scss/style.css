@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+#divCard:hover {
+  position: relative;
+  bottom: 8px;
+}
+
 #root .header {
   padding: 0 2rem;
   -webkit-box-align: center;

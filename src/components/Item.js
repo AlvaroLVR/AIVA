@@ -7,7 +7,7 @@ export default function ItemList(props) {
   
   return (
     <>
-      <div className="card m-2 p-2 align-items-center "  style={{width: '15rem'}}>
+      <div id='divCard' className="card m-2 p-2 align-items-center shadow-lg"  style={{width: '15rem'}}>
         <img className=" card-img-top" src={props.datos.image} style={{width: '11rem'}} />
         <div className="card-body d-flex flex-column justify-content-end text-center">
           <h5 className="card-title"><b>{`${props.datos.title}`} </b></h5>
