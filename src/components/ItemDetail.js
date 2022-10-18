@@ -8,7 +8,7 @@ export default function ItemDetail(props) {
     <>
       {/* ItemDetail */}
 
-      <div className='bg-white rounded-2 shadow-lg p-4 m-4' >
+      <div className='bg-white rounded-2 shadow-lg p-4 m-4 bg-light' >
         <div className='row'  >
           <div className='col-md-8 flex-wrap d-flex justify-content-around bg-white'>
             <img className='d-flex align-center' style={{width: '30vw',height: '70vh' }} src={props.prod.image} />
@@ -22,8 +22,7 @@ export default function ItemDetail(props) {
               <li className='list-group-item text-primary'>  Categoria: <i> {props.prod.category}  </i> </li>
               <li className='list-group-item fs-6 '>Descripcion <br/> {props.prod.description}</li>
             </ul>
-            <ItemCount/>
-            <Link to={`/carrito/${props.prod.id}`} className='btn bg-black text-white fs-5'>agregar al carrito </Link>
+            <ItemCount />
           </div>
         </div>
       </div>
