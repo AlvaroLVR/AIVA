@@ -3,18 +3,40 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
+import OnAdd from './OnAdd'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 /* componente secundario */
 
-function OnAdd() {
+function AgregarCart(id) {
   const [opciones,setOpciones] = useState(true)
+  const [notificacion, setNotificacion] = useState(false)
+
+  const notify = () => toast.success('se agrego al carrito!', {
+    position: "top-right",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    });
+
+  function seteoAgregar(opciones,notificacion){
+    opciones ? setOpciones(false) : setOpciones(true)
+    notificacion ? notify() : setNotificacion(false)
+  }
   
+
   return (
     <>
       {
         opciones ? 
-        <Link  className='btn bg-black text-white fs-5 d-flex justify-content-center' onClick={()=>{setOpciones(false)}}>agregar al carrito </Link> 
+        <Link className='btn bg-black text-white fs-5 d-flex justify-content-center' onClick={()=>{seteoAgregar(true,true)}}>agregar al carrito </Link> 
         :
-        <Link  className='btn text-white fs-5 d-flex justify-content-center bg-success' onClick={()=>{setOpciones(true)}}>seguir comprando</Link> 
+        <Link to='/'  className='btn text-white fs-5 d-flex justify-content-center bg-success'  ><b>seguir comprando</b></Link>
       }
     </>
   )
@@ -22,19 +44,12 @@ function OnAdd() {
 
 /* componente principal */
 export default function ItemCount() {
-  const {id} = useParams();
-  const [itemAdd,setItem] = useState(0)
+/*   const {id} = useParams(); */
 
   return (
     <>
-      <div className='d-flex flex-row justify-content-center align-items-baseline ' >
-        <Link className='btn bg-success text-white mx-2 '  >+</Link>
-        <Link className='btn bg-success text-white mx-2 '  >-</Link>
-        <p className='bg-light rounded-2 p-2'> <b>{itemAdd}</b></p>
-      </div>
-
       <OnAdd/>
-
+      <AgregarCart/>
     </>
   )
 }
