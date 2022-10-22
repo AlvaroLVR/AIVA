@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { useEffect } from 'react'
 import OnAdd from './OnAdd'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,6 +22,7 @@ function AgregarCart(id) {
     theme: "dark",
     });
 
+    
   function seteoAgregar(opciones,notificacion){
     opciones ? setOpciones(false) : setOpciones(true)
     notificacion ? notify() : setNotificacion(false)
