@@ -21,7 +21,7 @@ export default function ItemListContainer() {
     <div className='container-fluid d-flex flex-column bg-white' >
       <h2 className='text-center mt-4'>Productos</h2>
       {/* aca va el MAP */} 
-      <ul className='d-flex flex-wrap justify-content-center m-3' style={{padding: '0'}}>
+      <ul className='d-flex flex-wrap justify-content-center m-1' style={{padding: '0'}}>
         <ItemList data={data}/>
       </ul>
     </div>

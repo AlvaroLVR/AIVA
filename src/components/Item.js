@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function ItemList(props) {
+export default function Item(props) {
 
   /* CARD */
   

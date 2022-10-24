@@ -6,7 +6,7 @@ export default function ItemList(props) {
   return (
     <>
         {
-            props.data.map(item => <Item key={item.id} datos={item}/> )
+          props.data.map(item => <Item key={item.id} datos={item}/> )
         }
     </>
   )
