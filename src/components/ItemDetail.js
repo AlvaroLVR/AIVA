@@ -11,7 +11,7 @@ export default function ItemDetail(props) {
       <div className='bg-white rounded-2 shadow-lg p-4 m-3 bg-light' >
         <div className='row'  >
           <div className='col-md-8 flex-wrap d-flex justify-content-around bg-white'>
-            <img id='card-img' className='d-flex align-center' style={{height: '35vw',width: '45vw'}} src={props.prod.image} />
+            <img id='card-img' className='d-flex align-center' style={{height: '35vw',width: '35vw'}} src={props.prod.image} />
           </div>
           <div className='col-md-4  flex-wrap d-flex flex-column justify-content-between mt-2 '>
             <h2 className='text-center'> <b>{props.prod.title}</b> </h2>
@@ -22,7 +22,7 @@ export default function ItemDetail(props) {
               <li className='list-group-item text-primary'>  Categoria: <i> {props.prod.category}  </i> </li>
               <li className='list-group-item fs-6 '>Descripcion <br/> {props.prod.description}</li>
             </ul>
-            <ItemCount />
+            <ItemCount prod={props.prod}/>
           </div>
         </div>
       </div>

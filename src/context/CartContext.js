@@ -5,17 +5,15 @@ export const cartContext = createContext([])
 
 const CartContextProvider = ({children}) =>{
 
-    const [carList,setCartList] = useState([])
-    const [cantidad,setCantidad] = useState(0)
+    const [carList,setCartList] = useState({})
 
-    const addCart = (prod,cant) =>{
-        cant<0 ? setCantidad(0) : setCartList(...prod,cantidad)    
+    const addCart = (prod) =>{
+        console.log(carList, 'esto recibe cartContext');
+        setCartList(prod)
     }
-
 
     return(
         <cartContext.Provider value={{
-            cantidad,
             carList,
             addCart
         }}>
