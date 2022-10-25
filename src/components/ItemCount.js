@@ -8,7 +8,7 @@ import { cartContext } from '../context/CartContext';
 /* componente principal */
 export default function ItemCount(props) {
 
-  const {addCart,carList} = useContext(cartContext)
+  const {addCart} = useContext(cartContext)
   const [opciones,setOpciones] = useState(true)
   const [notificacion, setNotificacion] = useState(false)
   const [itemCant,setItemAdd] = useState(0)
@@ -48,13 +48,13 @@ export default function ItemCount(props) {
   return (
     <>
       <div className='d-flex flex-row justify-content-center bg-light rounded-2 p-2 my-2' >
-        <Link className='btn bg-success text-white me-2' onClick={()=>operacion(true)}>+</Link>
-        <Link className='btn bg-success text-white me-2' onClick={()=>operacion(false)}>-</Link>
+        <button className='btn bg-success text-white me-2' onClick={()=>operacion(true)}>+</button>
+        <button className='btn bg-success text-white me-2' onClick={()=>operacion(false)}>-</button>
         <span className='bg-dark text-white rounded-2 p-2' ><b>{itemCant}</b></span>
       </div>
       {
         opciones ? 
-        <Link className='btn bg-black text-white fs-5 d-flex justify-content-center' onClick={()=>{seteoAgregar(true,true,props.prod)}}>agregar al carrito </Link> 
+        <button className='btn bg-black text-white fs-5 d-flex justify-content-center' onClick={()=>{seteoAgregar(true,true,props.prod)}}>agregar al carrito </button> 
         :
         <Link to='/'  className='btn text-white fs-5 d-flex justify-content-center bg-success shadow-lg' >seguir comprando</Link>
       }

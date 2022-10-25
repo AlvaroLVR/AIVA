@@ -9,9 +9,9 @@ const CartContextProvider = ({children}) =>{
     const [cantidad,setCartCantidad] = useState(0)
 
     function addCart (prod,cant){
-        console.log(prod, 'esto recibe cartContext',cant);
         setCartList({...prod})
         setCartCantidad(cant)
+        console.log(carList, 'esto recibe cartContext',cantidad);
     }
 
     return(
