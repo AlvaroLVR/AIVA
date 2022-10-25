@@ -5,17 +5,18 @@ export const cartContext = createContext([])
 
 const CartContextProvider = ({children}) =>{
 
-    const [carList,setCartList] = useState({})
+    const [carList,setCartList] = useState([{}])
     const [cantidad,setCartCantidad] = useState(0)
 
-    const addCart = (prod,cant) =>{
+    function addCart (prod,cant){
         console.log(prod, 'esto recibe cartContext',cant);
-        setCartList({...prod,cant})
-        console.log(carList,'esto se guarda');
+        setCartList({prod})
+        setCartCantidad(cant)
     }
 
     return(
         <cartContext.Provider value={{
+            cantidad,
             carList,
             addCart
         }}>

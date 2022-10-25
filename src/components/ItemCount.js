@@ -9,7 +9,6 @@ import { cartContext } from '../context/CartContext';
 export default function ItemCount(props) {
 
   const {addCart,carList} = useContext(cartContext)
-
   const [opciones,setOpciones] = useState(true)
   const [notificacion, setNotificacion] = useState(false)
   const [itemCant,setItemAdd] = useState(0)
@@ -46,7 +45,6 @@ export default function ItemCount(props) {
     addCart( prod, itemCant )
   }
   
-  console.log(carList,'CARTLIST');
   return (
     <>
       <div className='d-flex flex-row justify-content-center bg-light rounded-2 p-2 my-2' >

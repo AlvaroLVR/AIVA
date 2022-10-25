@@ -7,9 +7,9 @@ import { useState } from 'react'
 export default function CartContainer(props) {
 
   return (
-    <div className='container-fluid bg-primary'>
-        <h1>CarritoContainer</h1>
-        <Cart/>
+    <div className='container-fluid '>
+      <h1 className='text-center px-2'>CarritoContainer</h1>
+      <Cart/>
     </div>
   )
 }
