@@ -9,6 +9,28 @@
     bottom: 8px;
 }
 
+#Loading{
+
+    animation-name: salto;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+    @keyframes salto {
+        0%{
+            position: relative;
+            bottom: 30px;
+        }
+        50%{
+            position: relative;
+            bottom: -30px;
+        }
+        100%{
+            position: relative;
+            bottom: 30px;
+        }
+    }
+}
+
+    
 /* @media (min-width: 400px) {
     #card-img{
         width: 75vw !important;

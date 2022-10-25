@@ -8,7 +8,7 @@ import { cartContext } from '../context/CartContext';
 /* componente principal */
 export default function ItemCount(props) {
 
-  const {addCart} = useContext(cartContext)
+  const {addCart,carList} = useContext(cartContext)
 
   const [opciones,setOpciones] = useState(true)
   const [notificacion, setNotificacion] = useState(false)
@@ -43,10 +43,10 @@ export default function ItemCount(props) {
     notificacion ? notify() : setNotificacion(false)
 
     console.log(prod,'esto se envia de itemCount');
-    addCart(prod, itemCant )
+    addCart( prod, itemCant )
   }
   
-
+  console.log(carList,'CARTLIST');
   return (
     <>
       <div className='d-flex flex-row justify-content-center bg-light rounded-2 p-2 my-2' >
@@ -60,6 +60,7 @@ export default function ItemCount(props) {
         :
         <Link to='/'  className='btn text-white fs-5 d-flex justify-content-center bg-success shadow-lg' >seguir comprando</Link>
       }
+      
     </>
   )
 }

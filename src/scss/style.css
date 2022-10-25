@@ -11,6 +11,50 @@
   bottom: 8px;
 }
 
+#Loading {
+  -webkit-animation-name: salto;
+          animation-name: salto;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes salto {
+  0% {
+    position: relative;
+    bottom: 30px;
+  }
+  50% {
+    position: relative;
+    bottom: -30px;
+  }
+  100% {
+    position: relative;
+    bottom: 30px;
+  }
+}
+
+@keyframes salto {
+  0% {
+    position: relative;
+    bottom: 30px;
+  }
+  50% {
+    position: relative;
+    bottom: -30px;
+  }
+  100% {
+    position: relative;
+    bottom: 30px;
+  }
+}
+
+/* @media (min-width: 400px) {
+    #card-img{
+        width: 75vw !important;
+    }
+} */
 #root .header {
   padding: 0 2rem;
   -webkit-box-align: center;
