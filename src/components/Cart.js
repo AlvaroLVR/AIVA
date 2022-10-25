@@ -4,6 +4,7 @@ import Item from './Item'
 
 export default function Cart() {
   const {carList,cantidad} = useContext(cartContext)
+  
   console.log(carList,'estas en CART',cantidad);
 
   return (

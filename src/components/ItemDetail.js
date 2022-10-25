@@ -1,8 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ItemCount from './ItemCount'
+import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 export default function ItemDetail(props) {
+  const [opciones,setOpciones] = useState(true)
+  const [notificacion, setNotificacion] = useState(false)
+
+  const notify = () => toast.success('se agrego al carrito!', {
+  position: "top-right",
+  autoClose: 2000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: false,
+  draggable: true,
+  progress: undefined,
+  theme: "dark",
+  });
+
+  function seteoAgregar(opciones,notificacion,prod){
+    opciones ? setOpciones(false) : setOpciones(true)
+    notificacion ? notify() : setNotificacion(false)
+
+  }
+  
 
   return (
     <>
@@ -22,7 +44,15 @@ export default function ItemDetail(props) {
               <li className='list-group-item text-primary'>  Categoria: <i> {props.prod.category}  </i> </li>
               <li className='list-group-item fs-6 '>Descripcion <br/> {props.prod.description}</li>
             </ul>
-            <ItemCount prod={props.prod}/>
+
+            <ItemCount />
+            {
+              opciones ? 
+              <button className='btn bg-black text-white fs-5 d-flex justify-content-center' onClick={()=>{seteoAgregar(true,true,props.prod)}}>agregar al carrito </button> 
+              :
+              <Link to='/'  className='btn text-white fs-5 d-flex justify-content-center bg-success shadow-lg' >seguir comprando</Link>
+            }
+      
           </div>
         </div>
       </div>

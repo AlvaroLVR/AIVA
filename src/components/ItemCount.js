@@ -1,28 +1,15 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { cartContext } from '../context/CartContext';
 
 /* componente principal */
-export default function ItemCount(props) {
+export default function ItemCount() {
 
   const {addCart} = useContext(cartContext)
-  const [opciones,setOpciones] = useState(true)
-  const [notificacion, setNotificacion] = useState(false)
-  const [itemCant,setItemAdd] = useState(0)
 
-  const notify = () => toast.success('se agrego al carrito!', {
-  position: "top-right",
-  autoClose: 2000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: false,
-  draggable: true,
-  progress: undefined,
-  theme: "dark",
-  });
+  const [itemCant,setItemAdd] = useState(0)
 
   ////////////////////////////////////
 
@@ -36,14 +23,6 @@ export default function ItemCount(props) {
     setItemAdd(0)
   }
 
-
-  function seteoAgregar(opciones,notificacion,prod){
-    opciones ? setOpciones(false) : setOpciones(true)
-    notificacion ? notify() : setNotificacion(false)
-
-    console.log(prod,'esto se envia de itemCount');
-    addCart( prod, itemCant )
-  }
   
   return (
     <>
@@ -52,12 +31,6 @@ export default function ItemCount(props) {
         <button className='btn bg-success text-white me-2' onClick={()=>operacion(false)}>-</button>
         <span className='bg-dark text-white rounded-2 p-2' ><b>{itemCant}</b></span>
       </div>
-      {
-        opciones ? 
-        <button className='btn bg-black text-white fs-5 d-flex justify-content-center' onClick={()=>{seteoAgregar(true,true,props.prod)}}>agregar al carrito </button> 
-        :
-        <Link to='/'  className='btn text-white fs-5 d-flex justify-content-center bg-success shadow-lg' >seguir comprando</Link>
-      }
       
     </>
   )
