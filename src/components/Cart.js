@@ -5,7 +5,7 @@ import Item from './Item'
 export default function Cart() {
   const {carList,cantidad} = useContext(cartContext)
   
-  console.log(carList,'estas en CART',cantidad);
+  console.log(carList,'estas en CART');
 
   return (
     <div className='d-flex flex-column rounded-2 bg-light m-4'>

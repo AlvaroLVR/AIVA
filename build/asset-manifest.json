@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/proyecto-React/static/css/main.600bc1ed.css",
+    "main.js": "/proyecto-React/static/js/main.c30d138a.js",
+    "index.html": "/proyecto-React/index.html",
+    "static/media/logoMenu.svg": "/proyecto-React/static/media/logoMenu.8599bbf1d631e634df1c01a00d71f661.svg",
+    "static/media/iconoCarrito.svg": "/proyecto-React/static/media/iconoCarrito.a62b89e984bdb468a08ec9222cedca5b.svg",
+    "main.600bc1ed.css.map": "/proyecto-React/static/css/main.600bc1ed.css.map",
+    "main.c30d138a.js.map": "/proyecto-React/static/js/main.c30d138a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.600bc1ed.css",
+    "static/js/main.c30d138a.js"
+  ]
+}
