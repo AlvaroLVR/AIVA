@@ -9,7 +9,7 @@ export default function Item(props) {
   
   return (
     <>
-      <div id='divCard' className="card m-2 p-3 align-items-center shadow-lg"  style={{width: '16rem', height: 'auto'}}>
+      <div id='divCard' className="card m-3 align-items-center shadow-lg"  style={{width: '16rem', height: 'auto'}}>
         <img className=" card-img-top" src={prod.image} style={{width: '11rem', }} />
         <div className="card-body d-flex flex-column justify-content-end text-center">
           <h5 className="card-title"><b>{`${prod.title}`} </b></h5>
