@@ -1,37 +1,27 @@
-import { createContext, useContext } from "react";
+import { createContext } from "react";
 import { useState } from "react";
+import { useContext } from "react";
 
-export const cartContext = createContext([])
+const CartContext = createContext([])
+export const useCartContext = () => useContext(CartContext)
 
 const CartContextProvider = ({children}) =>{
 
-    const [carList,setCartList] = useState([])
-    const [cantidad,setCartCantidad] = useState(0)
-
-    /* function addCart (prod,cant){
-        setCartList({...prod})
-        setCartCantidad({...cant})
-        console.log(carList, 'esto recibe cartContext',cantidad);
-    } */
+    const [carList,setCartList] = useState({})
 
     /////////////Codigo tutor/////////////////
     const addCart = (prod, cant) => {
-        const cart = {...prod,cant}
-
-        setCartList([...cart, carList])   
-        setCartCantidad(cant)
-        console.log(carList, 'esto recibe cartContext',cantidad);
+        setCartList({...prod,cant})
     }
   
 
     return(
-        <cartContext.Provider value={{
-            cantidad,
+        <CartContext.Provider value={{
             carList,
             addCart
         }}>
             {children}
-        </cartContext.Provider>
+        </CartContext.Provider>
     )
 }
 

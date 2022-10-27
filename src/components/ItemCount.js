@@ -1,23 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
-import { cartContext } from '../context/CartContext';
+import { useCartContext } from '../context/CartContext';
 import { useState } from 'react'
 import { toast } from 'react-toastify'
-import { useContext } from 'react'
-
 
 
 /* componente principal */
 export default function ItemCount(props) {
 
-  const {addCart} = useContext(cartContext)
+  const {addCart} = useCartContext()
 
   const [itemCant,setItemAdd] = useState(0)
   const [opciones,setOpciones] = useState(true)
-  const [notificacion, setNotificacion] = useState(false)
-
-  const {setCartList, carList} = useContext(cartContext)
 
   const notify = () => toast.success('se agrego al carrito!', {
   position: "top-right",
@@ -32,12 +27,11 @@ export default function ItemCount(props) {
 
   function seteoAgregar(opciones,notificacion,prod){
     opciones ? setOpciones(false) : setOpciones(true)
-    notificacion ? notify() : setNotificacion(false)
+    notificacion ? notify() : notificacion = false
     
-    setCartList({id:1, name:'hola'})
-
+    addCart(prod,itemCant) /* no setear directamente */
+    console.log('esto se envia a cartContext',prod,itemCant);
   }
-  
 
   ////////////////////////////////////
 

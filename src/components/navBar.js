@@ -12,7 +12,7 @@ export const NavBar = () =>{
             <div className="container">
                 
                 <Link className="navbar-brand header-logo" to={'/'}> 
-                    <img style={{height: '30px'}} className='svg' src={logoMenu} /> 
+                    <img style={{height: '30px'}} className='svg' src={logoMenu} alt='' /> 
                 </Link> 
                 
                 
@@ -20,14 +20,12 @@ export const NavBar = () =>{
                     <span className="navbar-toggler-icon "></span>
                 </button>
 
-                <div className="offcanvas offcanvas-end bg-dark" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+                <div className="offcanvas offcanvas-end bg-dark" tabIndex={-1} id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
 
                     <div className="offcanvas-header ">
-                        <a className="navbar-brand header-logo" >
-                            <Link to={'/'}>
-                            <img className='svg' style={{height: '30px'}} src={logoMenu} />
-                            </Link> 
-                        </a>
+                        <Link to={'/'} className="navbar-brand header-logo" >
+                            <img className='svg' style={{height: '30px'}} src={logoMenu} alt='' />  
+                        </Link>
                         <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
 

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { cartContext } from '../context/CartContext'
-import Item from './Item'
+import {useCartContext} from '../context/CartContext'
+
 
 export default function Cart() {
-  const {carList,cantidad} = useContext(cartContext)
+  const {carList} = useCartContext()
   
   console.log(carList,'estas en CART');
 

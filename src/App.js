@@ -2,10 +2,8 @@ import React from 'react'
 import {NavBar} from './components/NavBar'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer';
-import ItemDetail from './components/ItemDetail';
 import NotFound404 from './components/helpers/NotFound404';
 import ItemDetailContainer from './components/ItemDetailContainer'
-import Cart from './components/Cart';
 import CartContainer from './components/CartContainer';
 import { ToastContainer, toast } from 'react-toastify';
 import CategoriaContainer from './components/CategoriaContainer'
