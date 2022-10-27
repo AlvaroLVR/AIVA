@@ -7,11 +7,11 @@ export const useCartContext = () => useContext(CartContext)
 
 const CartContextProvider = ({children}) =>{
 
-    const [carList,setCartList] = useState({})
+    const [carList,setCartList] = useState([])
 
     /////////////Codigo tutor/////////////////
-    const addCart = (prod, cant) => {
-        setCartList({...prod,cant})
+    const addCart = (prod) => {
+        setCartList([ ...carList ,prod])
     }
   
 

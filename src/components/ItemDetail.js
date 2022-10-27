@@ -1,7 +1,20 @@
 import React from 'react'
 import ItemCount from './ItemCount'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useCartContext } from '../context/CartContext'
 
 export default function ItemDetail(props) {
+
+  const {addCart} = useCartContext()
+  const [isCount,setIsCount] = useState(true)
+
+  const onAdd = (cantidad) => {
+    console.log('onAdd', cantidad)
+    addCart( { ...props.prod, cantidad } )
+    setIsCount(false)
+  }
+
   return (
     <>
       {/* ItemDetail */}
@@ -20,7 +33,15 @@ export default function ItemDetail(props) {
               <li className='list-group-item text-primary'>  Categoria: <i> {props.prod.category}  </i> </li>
               <li className='list-group-item fs-6 '>Descripcion <br/> {props.prod.description}</li>
             </ul>
-            <ItemCount prod={props.prod} />
+            {isCount ? 
+              <ItemCount onAdd={onAdd} prod={props.prod} /> 
+            :
+            <div className='mx-2'>
+              <Link to='/carrito' className='btn bg-black text-white fs-5 d-flex justify-content-center mb-2' > Ir al carrito </Link> 
+              <Link to='/'  className='btn text-white fs-5 d-flex justify-content-center bg-success shadow-lg' >Seguir comprando</Link> 
+            </div>
+            }
+            
           </div>
         </div>
       </div>
