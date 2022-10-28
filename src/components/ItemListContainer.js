@@ -16,18 +16,19 @@ export default function ItemListContainer() {
     fetch('https://fakestoreapi.com/products')
     .then((res) => res.json() )
     .then((datos)=> setData(datos) )
+    
     .finally(()=> {setTimeout(()=> setLoading(false),500)})
   },[])
 
   return (
-    <div className='container-fluid d-flex flex-column bg-white' >
+    <div className='container d-flex flex-column bg-white' >
       { load ? 
         <Loading/> 
       : 
         <>
-          <h2 className='text-center mt-4'>Productos</h2>      
-          <ul className='d-flex flex-wrap justify-content-center m-1' style={{padding: '0'}}>
-          <ItemList data={data}/>
+          <h2 className='text-start mt-3'>Nuestros Productos</h2>      
+          <ul className='d-flex flex-wrap justify-content-around' style={{padding: '0'}}>
+            <ItemList data={data}/>
           </ul>
         </>   
       }

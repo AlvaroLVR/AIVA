@@ -5,8 +5,7 @@ import Cart from './Cart'
 export default function CartContainer(props) {
 
   return (
-    <div className='container-fluid '>
-      <h1 className='text-center px-2'>CarritoContainer</h1>
+    <div className='container-fluid my-4'>
       <Cart/>
     </div>
   )

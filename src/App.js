@@ -2,12 +2,12 @@ import React from 'react'
 import {NavBar} from './components/NavBar'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer';
-import NotFound404 from './components/helpers/NotFound404';
 import ItemDetailContainer from './components/ItemDetailContainer'
 import CartContainer from './components/CartContainer';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import CategoriaContainer from './components/CategoriaContainer'
 import CartContextProvider from './context/CartContext';
+import Error404 from './components/Error404';
 
 
 function App() {
@@ -23,8 +23,8 @@ function App() {
             <Route path='/categoria/:id' element={<CategoriaContainer/>}/>
 
 
-            <Route path='*' element={<NotFound404/>}/>
-            <Route path='*' element={ <Navigate to='/NotFound404' />} /> 
+            <Route path='*' element={<Error404/>}/>
+            <Route path='*' element={ <Navigate to='/Error404' />} /> 
           </Routes>
         </BrowserRouter>
         <ToastContainer />
