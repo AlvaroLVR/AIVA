@@ -35,7 +35,7 @@ export default function ItemCount({onAdd}) {
   
   return (
     <>
-      <div className='d-flex flex-row justify-content-center bg-light rounded-2 p-2 my-2' >
+      <div className='d-flex flex-row justify-content-center  rounded-2 p-2 my-1' >
         <button className='btn bg-success text-white me-2' onClick={()=>operacion(true)}>+</button>
         <button className='btn bg-success text-white me-2' onClick={()=>operacion(false)}>-</button>
         <span className='bg-dark text-white rounded-2 p-2' ><b>{itemCant}</b></span>

@@ -8,17 +8,47 @@ export const useCartContext = () => useContext(CartContext)
 const CartContextProvider = ({children}) =>{
 
     const [carList,setCartList] = useState([])
+    
 
+    const redondeo = (num) =>{
+        const numBack = (Math.round(num*100))/100
+        return numBack
+    }
     /////////////Codigo tutor/////////////////
     const addCart = (prod) => {
         setCartList([ ...carList ,prod])
     }
-  
+    
+    const precioTotalSinIVA = () => {
+        return redondeo(carList.reduce((acum, prod) => acum + (prod.cantidad * prod.price) , 0))
+    }
+    const precioTotalConIVA = () => {
+        const iva = 0.21
+        const total = precioTotalSinIVA()
+        return redondeo((total + (total*iva)))
+    }
+
+    const removeItem = (id) => {
+        setCartList( carList.filter(item => item.id !== id) )
+    }
+
+    const cleanCart = ()=>{
+        setCartList([])
+    }
+
+    /* const cartState = () =>{
+
+    } */
+    
 
     return(
         <CartContext.Provider value={{
             carList,
-            addCart
+            addCart,
+            precioTotalSinIVA,
+            precioTotalConIVA,
+            removeItem,
+            cleanCart
         }}>
             {children}
         </CartContext.Provider>

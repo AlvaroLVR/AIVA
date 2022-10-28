@@ -16,7 +16,7 @@ export default function ItemListContainer() {
     fetch('https://fakestoreapi.com/products')
     .then((res) => res.json() )
     .then((datos)=> setData(datos) )
-    .finally(()=> {setTimeout(()=> setLoading(false),3000)})
+    .finally(()=> {setTimeout(()=> setLoading(false),500)})
   },[])
 
   return (
