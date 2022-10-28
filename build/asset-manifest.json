@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/proyecto-React/static/css/main.3f30b9d1.css",
-    "main.js": "/proyecto-React/static/js/main.fe5e1ac7.js",
-    "index.html": "/proyecto-React/index.html",
-    "static/media/logoMenu.svg": "/proyecto-React/static/media/logoMenu.8599bbf1d631e634df1c01a00d71f661.svg",
-    "static/media/iconoCarrito.svg": "/proyecto-React/static/media/iconoCarrito.a62b89e984bdb468a08ec9222cedca5b.svg",
-    "static/media/trash-can-regular.svg": "/proyecto-React/static/media/trash-can-regular.3d075a7454e30db06705cb0ce0b2d5f9.svg",
-    "main.3f30b9d1.css.map": "/proyecto-React/static/css/main.3f30b9d1.css.map",
-    "main.fe5e1ac7.js.map": "/proyecto-React/static/js/main.fe5e1ac7.js.map"
+    "main.css": "/AIVA/static/css/main.3f30b9d1.css",
+    "main.js": "/AIVA/static/js/main.64cfbc58.js",
+    "index.html": "/AIVA/index.html",
+    "static/media/logoMenu.svg": "/AIVA/static/media/logoMenu.8599bbf1d631e634df1c01a00d71f661.svg",
+    "static/media/iconoCarrito.svg": "/AIVA/static/media/iconoCarrito.a62b89e984bdb468a08ec9222cedca5b.svg",
+    "static/media/trash-can-regular.svg": "/AIVA/static/media/trash-can-regular.3d075a7454e30db06705cb0ce0b2d5f9.svg",
+    "main.3f30b9d1.css.map": "/AIVA/static/css/main.3f30b9d1.css.map",
+    "main.64cfbc58.js.map": "/AIVA/static/js/main.64cfbc58.js.map"
   },
   "entrypoints": [
     "static/css/main.3f30b9d1.css",
-    "static/js/main.fe5e1ac7.js"
+    "static/js/main.64cfbc58.js"
   ]
 }
