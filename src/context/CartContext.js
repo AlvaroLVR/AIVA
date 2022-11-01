@@ -9,13 +9,13 @@ const CartContextProvider = ({children}) =>{
 
     const [carList,setCartList] = useState([])
     
-
     const redondeo = (num) =>{
         const numBack = (Math.round(num*100))/100
         return numBack
     }
-    /////////////Codigo tutor/////////////////
+    
     const addCart = (prod) => {
+        
         setCartList([ ...carList ,prod])
     }
     
@@ -36,10 +36,6 @@ const CartContextProvider = ({children}) =>{
         setCartList([])
     }
 
-    /* const cartState = () =>{
-
-    } */
-    
 
     return(
         <CartContext.Provider value={{

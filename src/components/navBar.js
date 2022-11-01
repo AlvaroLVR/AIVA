@@ -33,16 +33,16 @@ export const NavBar = () =>{
                         <div className="navbar container-fluid bg-dark">
                             <ul id="header-list-left" className="navbar-nav mb-lg-0">
                                 <li className="nav-item">
-                                    <Link to={'/categoria/hombres'} className="nav-link text-light fs-6" >Hombres</Link>
+                                    <Link to={`/categoria/${`men's clothing`}`} className="nav-link text-light fs-6" >Hombres</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/categoria/mujeres'} className="nav-link text-light fs-6" >Mujeres</Link>
+                                    <Link to={`/categoria/${`women's clothing`}`} className="nav-link text-light fs-6" >Mujeres</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/categoria/accesorios'} className="nav-link text-light fs-6" >Accesorios</Link>
+                                    <Link to={`/categoria/${`jewelery`}`} className="nav-link text-light fs-6" >Accesorios</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/categoria/importados'} className="nav-link text-light fs-6" >Importados</Link> 
+                                    <Link to={`/categoria/${`electronics`}`} className="nav-link text-light fs-6" >Importados</Link> 
                                 </li>
                             </ul>
                             <ul id="header-list-right" className="navbar-nav mb-lg-0">

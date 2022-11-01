@@ -7,6 +7,7 @@ import CartContainer from './components/CartContainer';
 import { ToastContainer } from 'react-toastify';
 import CartContextProvider from './context/CartContext';
 import Error404 from './components/Error404';
+import CategoriaContainer from './components/CategoriaContainer';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
             <Route path='/'  element={<ItemListContainer />} />
             <Route path='/detalles/:id' element={<ItemDetailContainer />} /> 
             <Route path='/carrito' element={<CartContainer/>}/>
-
+            <Route path='/categoria/:id' element={<CategoriaContainer/>}/>
 
             <Route path='*' element={<Error404/>}/>
             <Route path='*' element={ <Navigate to='/Error404' />} /> 

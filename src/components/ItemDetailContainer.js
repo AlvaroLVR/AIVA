@@ -10,7 +10,6 @@ export default function ItemDetailContainer() {
 
   /* setar el estado del objeto que se envia a ItemList */
   const [data, setData] = useState([])
-  /* const [prodDetail, setProdDetail] = useState([]) */
 
   /* llamar a la API y a la function que setea el estado de data */
   useEffect(()=>{
@@ -18,8 +17,7 @@ export default function ItemDetailContainer() {
     fetch('https://fakestoreapi.com/products')
     .then((res) => res.json() )
     .then((datos)=> setData(datos.find( detail => detail.id == id )) )
-
-  },[])
+  },[id])
     
   return (
     <div className='container'>
