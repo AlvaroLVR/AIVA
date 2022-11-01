@@ -5,17 +5,13 @@ import { Link } from 'react-router-dom'
 import { useCartContext } from '../context/CartContext'
 
 export default function ItemDetail(props) {
-  console.log(props.prod,'esto recibe itemdetail');
-
-  const {addCart} = useCartContext()
+  const {addCart,cantProd} = useCartContext()
   const [isCount,setIsCount] = useState(true)
 
   const onAdd = (cantidad) => {
-    console.log('onAdd', cantidad)
     addCart( { ...props.prod, cantidad } )
     setIsCount(false)
   }
-
   return (
     <>
       {/* ItemDetail */}

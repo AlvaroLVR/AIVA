@@ -4,8 +4,6 @@ import {useCartContext} from '../context/CartContext'
 
 export default function TableCart(carList) {
   const {removeItem} = useCartContext()
-  console.log(carList.prod,'estas en tablecart');
-  
   
   return (
     <>

@@ -15,11 +15,11 @@ export default function Cart() {
             <table className="table table-hover">
               {
                 carList.length === 0 ?
-                <thead>
-                  <tr>
-                    <th scope='col' colSpan={'5'} className='text-center fs-5'  style={{alignSelf: 'self-end'}} >Carrito vacio</th>
-                  </tr>
-                </thead>
+                  <thead>
+                    <tr>
+                      <th scope='col' colSpan={'5'} className='text-center fs-5'  style={{alignSelf: 'self-end'}} >Carrito vacio</th>
+                    </tr>
+                  </thead>
                 :
                 <>
                   <thead className="table-light ">

@@ -6,7 +6,6 @@ const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
 
 const CartContextProvider = ({children}) =>{
-
     const [carList,setCartList] = useState([])
     
     const redondeo = (num) =>{
@@ -22,6 +21,7 @@ const CartContextProvider = ({children}) =>{
     const precioTotalSinIVA = () => {
         return redondeo(carList.reduce((acum, prod) => acum + (prod.cantidad * prod.price) , 0))
     }
+
     const precioTotalConIVA = () => {
         const iva = 0.21
         const total = precioTotalSinIVA()
@@ -36,7 +36,11 @@ const CartContextProvider = ({children}) =>{
         setCartList([])
     }
 
-
+    const cantProd = () =>{
+        const total = carList.reduce((sum,value) =>(typeof value.cantidad == "number" ? sum + value.cantidad : sum),0)
+        return total
+    }
+    
     return(
         <CartContext.Provider value={{
             carList,
@@ -44,7 +48,8 @@ const CartContextProvider = ({children}) =>{
             precioTotalSinIVA,
             precioTotalConIVA,
             removeItem,
-            cleanCart
+            cleanCart,
+            cantProd
         }}>
             {children}
         </CartContext.Provider>

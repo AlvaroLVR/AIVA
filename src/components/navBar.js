@@ -2,24 +2,21 @@ import React from 'react'
 import logoMenu from '../img/logoMenu.svg'
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../context/CartContext';
 
-export const NavBar = () =>{
+export const NavBar = () =>{    
+    const {cantProd} = useCartContext()
 
     return <>
 
-        <nav className="navbar navbar-expand-lg py-0 bg-dark">
-        
-            <div className="container">
-                
+        <nav className="navbar navbar-expand-lg py-0 bg-dark">  
+            <div className="container">          
                 <Link className="navbar-brand header-logo" to={'/'}> 
                     <img style={{height: '30px'}} className='svg' src={logoMenu} alt='' /> 
                 </Link> 
-                
-                
                 <button className="navbar-toggler m-3 bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
                     <span className="navbar-toggler-icon "></span>
                 </button>
-
                 <div className="offcanvas offcanvas-end bg-dark" tabIndex={-1} id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
 
                     <div className="offcanvas-header ">
@@ -53,7 +50,7 @@ export const NavBar = () =>{
                                     <Link to={'/blog'} className="nav-link text-light fs-6" >Blog</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to={'/carrito'}  className="nav-link text-light fs-6" > <CartWidget/> </Link>
+                                    <Link to={'/carrito'}  className="nav-link text-light fs-6" > <CartWidget/> {cantProd() == 0 ? <></> : cantProd()} </Link>
                                 </li>
                             </ul>
                         </div>
