@@ -11,11 +11,11 @@ export default function TableCart(carList) {
             carList.prod.map(prod => 
             <>
               <tr key={prod.id}>
-                  <th scope="col">{prod.id}</th>
-                  <td scope="col">{prod.title}</td>
-                  <td scope="col" align='center' >{prod.cantidad}</td>
-                  <td scope="col" align='center' ><button onClick={()=>removeItem(prod.id)} className='btn btn-dark'><img src={trash} alt='' style={{height: '18px'}}  /></button></td>
-                  <td scope="col" align='center' >{prod.price * prod.cantidad}</td>
+                <th scope="col">{prod.id}</th>
+                <td scope="col">{prod.title}</td>
+                <td scope="col" align='center' >{prod.cantidad}</td>
+                <td scope="col" align='center' ><button onClick={()=>removeItem(prod.id)} className='btn btn-danger'><img src={trash} alt='' style={{height: '18px'}}  /></button></td>
+                <td scope="col" align='center' >{prod.price * prod.cantidad}</td>
               </tr>
             </>
             )

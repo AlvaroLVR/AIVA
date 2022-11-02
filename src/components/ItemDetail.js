@@ -3,6 +3,8 @@ import ItemCount from './ItemCount'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../context/CartContext'
+import carrito from '../img/iconoCarrito.svg'
+import compra from '../img/bag-svgrepo-com.svg'
 
 export default function ItemDetail(props) {
   const {addCart,cantProd} = useCartContext()
@@ -34,8 +36,8 @@ export default function ItemDetail(props) {
               <ItemCount onAdd={onAdd} prod={props.prod} /> 
             :
             <div className='mx-2'>
-              <Link to='/carrito' className='btn bg-black text-white fs-5 d-flex justify-content-center mb-2' > Ir al carrito </Link> 
-              <Link to='/'  className='btn text-white fs-5 d-flex justify-content-center bg-success shadow-lg' >Seguir comprando</Link> 
+              <Link to='/carrito' className='btn bg-black text-white fs-5 d-flex justify-content-center mb-2' style={{alignItems: 'align-self !important'}} > Ir al carrito <img className='d-flex align-end ms-2' src={carrito} alt='' style={{height:'24px'}} /> </Link> 
+              <Link to='/'  className='btn text-white fs-5 d-flex justify-content-center bg-success shadow-lg' >Seguir comprando <img className='ms-2' src={compra} alt='' style={{height:'24px'}} /></Link> 
             </div>
             }
             

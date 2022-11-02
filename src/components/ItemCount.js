@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { toast } from 'react-toastify'
 
 export default function ItemCount({onAdd}) {
-  const [itemCant,setItemAdd] = useState(0)
+  const [itemCant,setItemAdd] = useState(1)
 
   const notify = () => toast.success('se agrego al carrito!', {
   position: "top-right",
@@ -17,9 +17,24 @@ export default function ItemCount({onAdd}) {
   theme: "dark",
   })
 
+  const errorCart = () => toast.error('no agregaste un producto al carrito', {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+    theme: "dark",
+    })
+
   function seteoAgregar(notificacion){
-    notificacion ? notify() : notificacion = false
-    onAdd(itemCant)
+    if (itemCant == 0 ) {
+      errorCart() 
+    } else {
+      notificacion ? notify() : notificacion = false
+      onAdd(itemCant)
+    }
   }
 
   function operacion(a){
@@ -32,7 +47,6 @@ export default function ItemCount({onAdd}) {
     setItemAdd(0)
   }
 
-  
   return (
     <>
       <div className='d-flex flex-row justify-content-center  rounded-2 p-2 my-1' >

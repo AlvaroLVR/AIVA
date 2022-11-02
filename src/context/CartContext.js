@@ -7,15 +7,14 @@ export const useCartContext = () => useContext(CartContext)
 
 const CartContextProvider = ({children}) =>{
     const [carList,setCartList] = useState([])
-    
+
+    const addCart = (prod) => {
+        setCartList([ ...carList ,prod])
+    }
+
     const redondeo = (num) =>{
         const numBack = (Math.round(num*100))/100
         return numBack
-    }
-    
-    const addCart = (prod) => {
-        
-        setCartList([ ...carList ,prod])
     }
     
     const precioTotalSinIVA = () => {
