@@ -1,16 +1,17 @@
 {
   "files": {
     "main.css": "/AIVA/static/css/main.3f30b9d1.css",
-    "main.js": "/AIVA/static/js/main.a9155fd9.js",
+    "main.js": "/AIVA/static/js/main.77d852bc.js",
     "index.html": "/AIVA/index.html",
     "static/media/logoMenu.svg": "/AIVA/static/media/logoMenu.8599bbf1d631e634df1c01a00d71f661.svg",
     "static/media/iconoCarrito.svg": "/AIVA/static/media/iconoCarrito.a62b89e984bdb468a08ec9222cedca5b.svg",
+    "static/media/bag-svgrepo-com.svg": "/AIVA/static/media/bag-svgrepo-com.6887627fe204f05b70636e44bb3026c0.svg",
     "static/media/trash-can-regular.svg": "/AIVA/static/media/trash-can-regular.3d075a7454e30db06705cb0ce0b2d5f9.svg",
     "main.3f30b9d1.css.map": "/AIVA/static/css/main.3f30b9d1.css.map",
-    "main.a9155fd9.js.map": "/AIVA/static/js/main.a9155fd9.js.map"
+    "main.77d852bc.js.map": "/AIVA/static/js/main.77d852bc.js.map"
   },
   "entrypoints": [
     "static/css/main.3f30b9d1.css",
-    "static/js/main.a9155fd9.js"
+    "static/js/main.77d852bc.js"
   ]
 }
