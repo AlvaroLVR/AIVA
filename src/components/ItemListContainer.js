@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import ItemList from './ItemList';
 import Loading from './Loading';
-import {collection,getDoc,getDocs,getFirestore} from 'firebase/firestore'
+import {collection,getDocs,getFirestore} from 'firebase/firestore'
 
 export default function ItemListContainer() {
   /* setar el estado del objeto que se envia a ItemList */
@@ -17,7 +17,6 @@ export default function ItemListContainer() {
     .then(res => setData(res.docs.map(res => ({id: res.id,...res.data()}))))
     .finally(()=>setLoading(false))
   },[])
-
 
   return (
     <div className='container d-flex flex-column bg-white' >
