@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../src/scss/style.css';
 import App from './App';
-
+import { firestoreInit } from './firebase/config';
+firestoreInit()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

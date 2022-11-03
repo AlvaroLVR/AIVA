@@ -3,29 +3,39 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Item from './Item'
+import {collection,getDocs,getFirestore, query, where} from 'firebase/firestore'
+import Loading from './Loading'
 
 export default function CategoriaContainer () {
   const category = useParams()
-  /* setar el estado del objeto que se envia a ItemList */
+  const [loading,setLoading] = useState(true)
   const [data, setData] = useState([])
 
-  /* llamar a la API y a la function que setea el estado de data */
   useEffect(()=>{
-    fetch('https://fakestoreapi.com/products')
-    .then((res) => res.json() )
-    .then((datos)=> setData(datos.filter( prod => prod.category ==  category.id )) )
+    const db = getFirestore()
+    const queryCollection = collection(db,'products')
+    const queryFilter = query(queryCollection, where('category','==',category.id))
+    getDocs(queryFilter)
+    .then(res => setData(res.docs.map(res => ({id: res.id,...res.data()}))))
+    .finally(()=>setLoading(false))
   },[category])
-  
+
   return (
-    <div className='container'>
-      <h1 className='my-2 text-uppercase border-bottom border-2 border-secondary text-center'>{category.id}</h1>
-      <div className='container'>
-        <div className='d-flex flex-row flex-wrap'>
-          {
-            data.map(item => <Item key={item.id} datos={item}/> )
-          }
-        </div>
-      </div>
+    <div className='container' style={{maxHeight: 'auto',display: 'inline'}}>
+      {loading ? 
+        <Loading/>
+        :
+        <>
+          <h1 className='my-2 text-uppercase text-center'>{category.id}</h1>
+          <div className='container'>
+            <div className='d-flex flex-row flex-wrap'>
+              {
+                data.map(item => <Item key={item.id} datos={item}/> )
+              }
+            </div>
+          </div>
+        </>
+      }
     </div>
   )
 }

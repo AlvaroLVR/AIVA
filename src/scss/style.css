@@ -95,4 +95,16 @@
 #root .header .header-lista #header-list-right .header-carrito {
   height: 28px;
 }
+
+.footer .footer-contacto {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.footer .footer-contacto .direccion iframe {
+  width: 38vw;
+  height: 30vh;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=style.css.map */
