@@ -20,17 +20,17 @@ export default function ItemDetail(props) {
 
       <div className='bg-white rounded-2 shadow-lg p-4 m-3 bg-light' >
         <div className='row'  >
-          <div className='col-md-8 bg-white d-flex justify-content-center' style={{height: '35vw'}}>
-            <img id='card-img' style={{height: '35vw',width: '35vw'}} src={props.prod.image} alt='' />
+          <div className='col-md-6 bg-white d-flex justify-content-center' style={{maxHeight: '35vw'}}>
+            <img id='card-img' style={{height: '35vw',maxWidth: '35vw'}} src={props.prod.image} alt='' />
           </div>
-          <div className='col-md-4 d-flex flex-column justify-content-between  bg-light p-2 rounded-2' >
+          <div className='col-md-6 d-flex flex-column justify-content-between  bg-light p-1 rounded-2' >
             <h2 className='text-center'> <b>{props.prod.title}</b> </h2>
-            <div className='text-center fs-3 rounded-1 '>
+            <div className='text-center fs-4 rounded-1 '>
               <b className='bg-success text-white p-2 rounded-1'>Precio $ {props.prod.price}  </b>
             </div>
             <ul className='mt-2'>
               <li className='list-group-item text-primary'>  Categoria: <i> {props.prod.category}  </i> </li>
-              <li className='list-group-item fs-6'>Descripcion <br/> {props.prod.description}</li>
+              <li className='list-group-item' >Descripcion <br/> {props.prod.description}</li>
             </ul>
             {isCount ? 
               <ItemCount onAdd={onAdd} prod={props.prod} /> 
