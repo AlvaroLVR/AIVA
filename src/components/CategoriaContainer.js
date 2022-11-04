@@ -21,14 +21,14 @@ export default function CategoriaContainer () {
   },[category])
 
   return (
-    <div className='container' style={{maxHeight: 'auto',display: 'inline'}}>
+    <div className='container' style={{maxHeight: '180vh'}}>
       {loading ? 
         <Loading/>
         :
         <>
-          <h1 className='my-2 text-uppercase text-center'>{category.id}</h1>
+          <h1 className='my-3 text-uppercase text-start'>{category.id}</h1>
           <div className='container'>
-            <div className='d-flex flex-row flex-wrap'>
+            <div className='d-flex flex-row flex-wrap my-2'>
               {
                 data.map(item => <Item key={item.id} datos={item}/> )
               }

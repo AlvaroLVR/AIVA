@@ -20,8 +20,8 @@ export const NavBar = () =>{
                 <div className="offcanvas offcanvas-end bg-dark" tabIndex={-1} id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
 
                     <div className="offcanvas-header ">
-                        <Link to={'/'} className="navbar-brand header-logo" >
-                            <img className='svg' style={{height: '30px'}} src={logoMenu} alt='' />  
+                        <Link to={'/'} className="navbar-brand header-logo " >
+                            <img className='svg' style={{height: '30px'}} src={logoMenu} alt=''  />  
                         </Link>
                         <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
