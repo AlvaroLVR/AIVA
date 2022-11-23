@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { useCartContext } from '../context/CartContext'
-import {collection, getFirestore,addDoc,getDoc} from 'firebase/firestore'
+import {collection, getFirestore,addDoc} from 'firebase/firestore'
 import { Link } from 'react-router-dom'
 
 export default function FinishBuying() {
   const { carList,precioTotalConIVA, cleanCart} = useCartContext()
-  const [finishBuy,setFinishBuy] = useState(true)
-
+  const [finishBuy,setFinishBuy] = useState(true)  
   const [formData,setFormData] = useState({
     name: '',
     lastName: '',
@@ -14,8 +13,24 @@ export default function FinishBuying() {
     telephone: '',
   })
 
+  const emailVerification = () =>{
+    document.getElementById('validationEmail').value == document.getElementById('validationEmail1').value ? 
+    document.getElementById('validationEmail1').className = 'form-control is-valid'
+    :
+    document.getElementById('validationEmail1').className = 'form-control is-invalid';
+
+  }
+
+  const emailCheck = () =>{
+    document.getElementById('validationEmail').value != document.getElementById('validationEmail1').value ? 
+    document.getElementById('validationEmail1').focus() 
+    :
+    formHandler()
+  }
+
   const generarOrder = (e) =>{
     e.preventDefault()
+
     const order = {}
 
     order.buyer = {
@@ -29,7 +44,6 @@ export default function FinishBuying() {
       const {id,title,price,cantidad} = prod
       return {id, title, price,cantidad}
     })
-
 
     order.total = precioTotalConIVA()
 
@@ -67,16 +81,27 @@ export default function FinishBuying() {
                     <input type="text" className="form-control" id="validationCustom02"  name='lastName' onBlur={formHandler} required/>
 
                   </div>
+
                   <div className="col-md-6">
                     <label for="validationCustomUsername" className="form-label">Email</label>
                     <div className="input-group has-validation">
                       <span className="input-group-text" id="inputGroupPrepend">@</span>
-                      <input type="text" className="form-control" id="validationCustomUsername"  aria-describedby="inputGroupPrepend" name='email' onBlur={formHandler} required/>
+                      <input type="text" className="form-control" id="validationEmail"  aria-describedby="inputGroupPrepend" name='email' pattern='[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}' onBlur={formHandler} required/>
                     </div>
                   </div>
+
+                  <div className="col-md-6">
+                    <label for="validationCustomUsername" className="form-label">Repetir Email</label>
+                    <div className="input-group has-validation ">
+                      <span className="input-group-text " id="inputGroupPrepend">@</span>
+                      <input type="text" className="form-control " id="validationEmail1"  aria-describedby="inputGroupPrepend" name='email' pattern='[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}'  autoComplete='off' onBlur={emailCheck} onChange={emailVerification}  required/>
+                    </div>
+                  </div>
+
+
                   <div className="col-md-6">
                     <label for="validationCustom03" className="form-label" >Telefono</label>
-                    <input type="number" className="form-control" id="validationCustom03" placeholder='15 1234 1234' name='telephone'  onBlur={formHandler} required/>
+                    <input type="number" className="form-control" id="validationCustom03" placeholder='15 1234 1234' name='telephone' pattern='[0-9]{10}' onBlur={formHandler} required/>
                   </div>
 
                   <div className="col-md-12">
@@ -87,7 +112,7 @@ export default function FinishBuying() {
             </div>
           :
             <div className='col-md-4 d-flex flex-column align-self-center m-3 p-3 rounded-3 bg-white'>
-              <p className='text-center fs-4'>Ya realizaste la compra! <br/> {formData.name} Gracias por elegirnos</p>
+              <p className='text-center fs-4'>Ya realizaste la compra! <br/> {formData.name} Gracias por elegirnos. </p>
               <Link className='btn btn-success fs-4' to={'/'}>Volver al inicio</Link>
             </div>
           }
