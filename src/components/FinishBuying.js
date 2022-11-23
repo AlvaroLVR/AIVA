@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useCartContext } from '../context/CartContext'
-import {collection, getFirestore,addDoc} from 'firebase/firestore'
+import {collection, getFirestore,addDoc,getDoc} from 'firebase/firestore'
 import { Link } from 'react-router-dom'
 
 export default function FinishBuying() {
@@ -37,8 +37,7 @@ export default function FinishBuying() {
     const orders = collection(db, 'orders')
 
     addDoc(orders, order) // setDoc(orders, obj, id)
-    .then(resp => console.log(resp))
-    .then(res=> alert('Compra finalizada \n este es tu numero de compra'))
+    .then(resp => alert('Compra finalizada \n este es tu numero de compra: ' + resp._key.path.segments[1] ))
     .then(() => setFinishBuy(false))
     .finally(() => cleanCart())
   }
