@@ -26,7 +26,7 @@ export default function ItemCount({onAdd}) {
     draggable: false,
     progress: undefined,
     theme: "dark",
-    })
+  })
 
   function seteoAgregar(notificacion){
     if (itemCant == 0 ) {

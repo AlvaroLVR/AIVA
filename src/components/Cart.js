@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import compra from '../img/bag-svgrepo-com.svg'
 
 export default function Cart() {
-  const {carList,precioTotalSinIVA,precioTotalConIVA,cleanCart} = useCartContext()
+  const {carList,precioTotalSinIVA,precioTotalConIVA,cleanCart,prodRepetido} = useCartContext()
   
   return (
     <div className='container bg-light rounded-2' style={{height: '100vh'}}>
