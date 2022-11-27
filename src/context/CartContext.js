@@ -16,7 +16,7 @@ const CartContextProvider = ({ children }) => {
         if (bandera) {
             carList.pop()
             setTotalCant(cantProd())
-            console.log(cantProd(),'este es el total de cantidad')
+        
         } else {
             setBandera(false)
             setTotalCant(cantProd())
@@ -26,7 +26,7 @@ const CartContextProvider = ({ children }) => {
     const addCart = (prod) => {
         setCartList([...carList, prod])
         produRepetido(prod)
-        console.log(carList, ' lista de pruductos');
+    
     }
 
     const produRepetido = (produ) => {
@@ -34,7 +34,7 @@ const CartContextProvider = ({ children }) => {
         const idxCarList = carList.findIndex(ele => ele.id === produ.id)
 
         if (idxCarList != -1) {     // este producto se repite
-            console.log(idxCarList, 'index del producto repetido');
+        
 
             const catidadTotal = carList[idxCarList].cantidad + produ.cantidad
 
@@ -44,7 +44,7 @@ const CartContextProvider = ({ children }) => {
             setBandera(true)
 
         } else {                    // este produco no se repite
-            console.log('producto no repetido');
+        
             setBandera(false)
         }
 
@@ -76,9 +76,9 @@ const CartContextProvider = ({ children }) => {
     }
 
     const cantProd = () => {
-        console.log(carList,'cantProd')
+    
         const total = carList.reduce((acc,curr)=> acc + curr.cantidad,0)
-        console.log(total,'total cantProd');
+    
         return total
     }
 
