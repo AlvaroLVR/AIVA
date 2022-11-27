@@ -66,7 +66,9 @@ const CartContextProvider = ({ children }) => {
     }
 
     const removeItem = (id) => {
+        setBandera(false)
         setCartList(carList.filter(item => item.id !== id))
+        //setBandera(false)
     }
 
     const cleanCart = () => {
